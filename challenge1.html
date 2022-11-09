@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge 1</title>
+        <script>
+            function greetMe() {
+                //event.preventDefault();
+                const name = document.getElementById("namebox").value;
+                const year = document.getElementById("yearbox").value;
+                const output = document.getElementById("output");
+                const currentyear = new Date().getFullYear();
+                const age = currentyear - year;
+                output.innerHTML = `
+                    <h1>Hello ${name} you are probably ${age} years old</h1>
+                `;
+                if (age===37) {
+                    console.log("you are 37");
+                }
+
+                const pizza = {
+                    base: "thin",
+                    toppings: ["olives", "pineapple"]
+                }
+                pizza.size = '12"';
+                console.log(pizza);
+
+                const pizza2 = {
+                    ...pizza,
+                    extraHot: true,
+                    size: '8"'
+                }
+                console.log(pizza2);
+
+                const colours = ["red", "green", "blue", "magenta"];
+                for (let i=0; i < colours.length ; i++) {
+                    console.log(colours[i]);
+                }
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Javascript Challenge 1</h1>
+            
+                <p>
+                    <label for="namebox">Name: </label>
+                    <input type="text" id="namebox">
+                </p>
+                <p>
+                    <label for="yearbox">Year of birth: </label>
+                    <input type="number" id="yearbox">
+                </p>
+                <p>
+                    <button onclick=greetMe()>Greet Me</button>
+                </p>
+                <div id="output"></div>
+            
+        </div>
+    </body>
+</html>
